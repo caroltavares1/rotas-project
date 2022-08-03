@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main-div{
+    margin-top: 20px;
+    height: fix-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+
+}
+
+.my-card {
+    max-width: 100%;
+}
+
+.main-div .mat-form-field + .mat-form-field {
+    margin-left: 30px;
+    
+}

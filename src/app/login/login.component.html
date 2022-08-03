@@ -1,0 +1,44 @@
+<div class="main-div">
+    <mat-card class="my-card">
+        <mat-card-title>Login</mat-card-title>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <p>Informe o seu email e senha</p>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email </mat-label>
+                    <input id="email" type="email" formControlName="email"
+                        matInput>
+                </mat-form-field>
+                <div [ngStyle]="{'color': 'red'}"
+                    *ngIf="loginForm.controls['email'].invalid &&
+                    loginForm.controls['email'].touched">
+                    Email é obrigatório
+                </div>
+               
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input id="senha" type="password" formControlName="senha"
+                        matInput>
+                </mat-form-field>
+                <div [ngStyle]="{'color': 'red'}" class=""
+                    *ngIf="loginForm.controls['senha'].invalid &&
+                    loginForm.controls['senha'].touched">
+                    Senha é obrigatório
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions align="end">
+                <button mat-raised-button
+                    color="accent" type="submit"
+                    [disabled]="!loginForm.valid">
+                    Login
+                </button>
+            </mat-card-actions>
+            <p>Form Status: {{ loginForm.status }}</p>
+        </form>
+    </mat-card>
+</div>

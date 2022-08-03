@@ -1,0 +1,9 @@
+<div class="example-container mat-elevation-z8">
+    <p>Lista de cursos</p>
+    <mat-nav-list mat-elevation-z8>
+        <mat-list-item *ngFor="let curso of cursos">
+            <a [routerLink]="['/cursos', curso.id]">{{ curso.nome }}</a>
+        </mat-list-item>
+
+    </mat-nav-list>
+</div>
